@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || Hello World</title>
+    <title>Sakana&#39;s Blog || Markdown语法测试</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,35 +169,59 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>Hello World </h1>
+        <h1>Markdown语法测试 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/10/15
+            2023/10/19
         </span>
 
         
 
         
+
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Study" style=color:#006674>
+                    Study
+                </a>
+            </span>
+            
+        </span>
+        
     </div>
 
     <div class="content" v-pre>
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <h1 id="这是最大的标题"><a href="#这是最大的标题" class="headerlink" title="这是最大的标题"></a>这是最大的标题</h1><h2 id="第二大的标题"><a href="#第二大的标题" class="headerlink" title="第二大的标题"></a>第二大的标题</h2><h3 id="第三大的标题"><a href="#第三大的标题" class="headerlink" title="第三大的标题"></a>第三大的标题</h3><p>标题是用#来对应html中的h1-h6</p>
+<h2 id="强调和斜体"><a href="#强调和斜体" class="headerlink" title="强调和斜体"></a>强调和斜体</h2><p><strong>这是一个强调语句</strong><br><em>这是一个斜体语句</em><br><del>这是一个删除语句</del></p>
+<p>分别靠*和**来实现，对应html的b和em</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><span id="more"></span>
+<p>1.一号<br>2.二号<br>3.三号</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><blockequot>这应该是一个引用的句子<br/><br>  可以实现多级引用<br/><br>  就像这样<br/><br>还是挺好玩的</p>
+</blockquote>
+
+<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><p>下面是一串代码</p>
+<pre><code>
+#include <stdio.h>
+int main()
+&#123;
+    printf("hello");
+    return 0;
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>似乎markdown也能使用html的语法</p>
+<p>不知道这样能不能有用，毕竟还是在测试</p>
+<h2 id="网页跳转"><a href="#网页跳转" class="headerlink" title="网页跳转"></a>网页跳转</h2><p><a href="https://littlefish0403.github.io/">https://littlefish0403.github.io/</a><br><a href="mailto:&#49;&#48;&#x34;&#49;&#51;&#x36;&#x35;&#x30;&#55;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#49;&#48;&#x34;&#49;&#51;&#x36;&#x35;&#x30;&#55;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a><br>要插入一个网址也很简单，用&lt;&gt;括起来就行</p>
+<h2 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h2><p><img src="/image/3.jpg" alt="这是一张二次元美图" title="这是一张二次元美图"><br>这是图片的引用<br><a href="https://littlefish0403.github.io/"><img src="/image/3.jpg" alt="这是一张二次元美图" title="这是一张二次元美图"></a><br>点击图片可以跳转</p>
+<p><em><strong>大概就这些啦</strong></em></p>
 
     </div>
 
