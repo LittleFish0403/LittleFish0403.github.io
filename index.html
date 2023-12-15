@@ -197,6 +197,111 @@
 
 <div class="post">
 
+    <a href="/2023/12/13/CS61A-Recursion/">
+        <h2>
+            
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/13
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h1 id="9-Recursion"><a href="#9-Recursion" class="headerlink" title="9_Recursion"></a>9_Recursion</h1><h2 id="Leap-of-Faith"><a href="#Leap-of-Faith" class="headerlink" title="Leap of Faith"></a>Leap of Faith</h2><ol>
+<li>Verify the base case (n&#x3D;0)</li>
+<li>Treat fact as a functional abstraction (功能抽象)</li>
+<li>Assume fact(n-1) is correct ,verify that fact(n) is correct (<em>数学归纳法</em>)</li>
+</ol>
+<ul>
+<li>When approaching or debugging recursive functions, you should avoid visualizing them in this way for large or complicated inputs, since the large number of frames can be quite unwieldy and confusing.</li>
+</ul>
+<h1 id="10-Tree-Recuersion"><a href="#10-Tree-Recuersion" class="headerlink" title="10_Tree_Recuersion"></a>10_Tree_Recuersion</h1><h2 id="Recursive-Process"><a href="#Recursive-Process" class="headerlink" title="Recursive Process"></a>Recursive Process</h2><p>![image](&#x2F;image&#x2F;屏幕截图 2023-12-14 145407.png “image”)</p>
+<h2 id="Count-Partitions"><a href="#Count-Partitions" class="headerlink" title="Count_Partitions"></a>Count_Partitions</h2><pre><code>def count_partiotion(n,m):
+    if n == 0:
+        return 1
+    elif n &lt; 0:
+        return 0
+    elif m == 0:
+        return 0
+    else:
+        with_m = conut_partitions(n-m,m)
+        without_m = count_partitions(n,m-1)
+        return with_m + without_m
+</code></pre>
+<h1 id="HW03"><a href="#HW03" class="headerlink" title="HW03"></a>HW03</h1><h3 id="Count-Coins-Abstract"><a href="#Count-Coins-Abstract" class="headerlink" title="Count Coins(Abstract)"></a>Count Coins(Abstract)</h3><p>Given a positive integer <code>total</code>, a set of coins makes change for <code>total</code> if the sum of the values of the coins is <code>total</code>. Here we will use standard US Coin values: 1, 5, 10, 25. </p>
+<pre><code>def next_smaller_coin(coin):
+    if coin == 25: 
+        return 10 
+    elif coin == 10: 
+        return 5 
+    elif coin == 5: 
+        return 1
+
+def count_coins(total):
+    def constrained_count_small(total, largest_coin): 
+    if total == 0: 
+        return 1 
+    if total &lt; 0: 
+        return 0 
+    if largest_coin == None: 
+        return 0 
+        without_coin=constrained_count_small(total,next_smaller_coin(largest_coin)) 
+        with_coin = constrained_count_small(total - largest_coin, largest_coin) 
+        return without_coin + with_coin 
+    return constrained_count_small(total, 25)
+</code></pre>
+<ul>
+<li>抽象的作用</li>
+<li>仅关心当前函数能实现什么，而不提前构思函数的具体情况</li>
+<li>count_coins用处就是计算金额的组成情况</li>
+<li>without_coin和with_coin分别代表前半部分的情况和后半部分情况</li>
+<li>直到细分到最后再开始分类讨论</li>
+</ul>
+<h3 id="Towers-of-Hanoi-汉诺塔"><a href="#Towers-of-Hanoi-汉诺塔" class="headerlink" title="Towers of Hanoi(汉诺塔)"></a>Towers of Hanoi(汉诺塔)</h3><pre><code>def print_move(origin, destination):
+    print(&quot;Move the top disk from rod&quot;, origin, &quot;to rod&quot;, destination)
+
+def move_stack(n, start, end):
+    if n == 1: 
+        print_move(start, end) 
+    else: 
+        other = 6 - start - end 
+        move_stack(n-1, start, other) 
+        print_move(start, end) 
+        move_stack(n-1, other, end)
+</code></pre>
+<h3 id="Anonymous-Factorial-匿名阶乘"><a href="#Anonymous-Factorial-匿名阶乘" class="headerlink" title="Anonymous Factorial(匿名阶乘)"></a>Anonymous Factorial(匿名阶乘)</h3><pre><code>def make_anonymous_factorial():
+    return (lambda f: f(f))(lambda f: lambda x: 1 if x == 0 else x * f(f)(x - 1))
+</code></pre>
+
+            
+        </div>
+    </div>
+
+    <div class="post-tags">
+        
+        
+    </div>
+
+    <a href="/2023/12/13/CS61A-Recursion/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
     <a href="/2023/10/25/Python速通日志-2/">
         <h2>
             Python速通日志-2
@@ -239,7 +344,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Study" style=color:#607d8b>
+            <a href="/tags/Study" style=color:#006674>
                 Study
             </a>
         </span>
@@ -291,7 +396,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Study" style=color:#016a99>
+            <a href="/tags/Study" style=color:#6484be>
                 Study
             </a>
         </span>
@@ -397,7 +502,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Study" style=color:#6484be>
+            <a href="/tags/Study" style=color:#016a99>
                 Study
             </a>
         </span>
@@ -449,7 +554,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Chat" style=color:#607d8b>
+            <a href="/tags/Chat" style=color:#006674>
                 Chat
             </a>
         </span>
