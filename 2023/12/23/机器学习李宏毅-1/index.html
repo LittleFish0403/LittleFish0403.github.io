@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || </title>
+    <title>Sakana&#39;s Blog || 机器学习李宏毅-1</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -165,237 +165,109 @@
                 </div>
 
                 <div id="main">
-                    
-<div id="archives">
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/12/23" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/12/23</div>
-                <a href="/2023/12/23/机器学习李宏毅-1/">
-                    <h3>机器学习李宏毅-1</h3>
-                </a>
-                <div class="info">
-                    
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1>机器学习李宏毅-1 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2023/12/23
+        </span>
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#016a99>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/12/15" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/12/15</div>
-                <a href="/2023/12/15/CS61A-Recursion/">
-                    <h3>CS61A-Recursion</h3>
-                </a>
-                <div class="info">
-                    
+        
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#607d8b>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/25" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/25</div>
-                <a href="/2023/10/25/Python速通日志-2/">
-                    <h3>Python速通日志-2</h3>
-                </a>
-                <div class="info">
-                    
+        
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#607d8b>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/23" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/23</div>
-                <a href="/2023/10/23/Python速通日志-1/">
-                    <h3>Python速通日志-1</h3>
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Study" style=color:#016a99>
+                    Study
                 </a>
-                <div class="info">
-                    
+            </span>
+            
+        </span>
+        
+    </div>
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#6484be>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
+    <div class="content" v-pre>
+        <h2 id="Regression-Example-Poke"><a href="#Regression-Example-Poke" class="headerlink" title="Regression (Example:Poke)"></a>Regression (Example:Poke)</h2><h3 id="Step1-Model"><a href="#Step1-Model" class="headerlink" title="Step1:Model"></a>Step1:Model</h3><ul>
+<li>y&#x3D;b+w*x$_cp$   (weight&#x2F;bias)</li>
+<li>y&#x3D;b+$\Sigma$$w_i$$x_i$   (各种不同的属性) (feature)</li>
+</ul>
+<h3 id="Step2-Goodness-of-Function"><a href="#Step2-Goodness-of-Function" class="headerlink" title="Step2:Goodness of Function"></a>Step2:Goodness of Function</h3><p>Training Data &#x3D;&gt; ($x^n$,$y^n$)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231705582.png" alt="Pasted image 20231223145442.png"></p>
+<span id="more"></span>
+
+<ul>
+<li><p>Loss function (func) :judge how bad the func is</p>
+</li>
+<li><p>L( f ) &#x3D; L( w, b ) &#x3D; $\Sigma$( ( $y^n$ - ( b + w*$x^n$ ) )$^2$</p>
+</li>
+<li><p>计算估测误差值之和<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231705570.png" alt="Pasted image 20231223150232.png"></p>
+</li>
+<li><p>Then Pick the Best Function</p>
+</li>
+<li><p>f$^*$ &#x3D; arg min L(f) &#x3D;&gt;w$^*$,b$^*$</p>
+</li>
+</ul>
+<h3 id="Step3-Gradient-Descent"><a href="#Step3-Gradient-Descent" class="headerlink" title="Step3:Gradient Descent"></a>Step3:Gradient Descent</h3><p><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706070.png" alt="Pasted image 20231223151022.png"></p>
+<h4 id="One-parameter"><a href="#One-parameter" class="headerlink" title="One parameter"></a>One parameter</h4><ul>
+<li>Step Size : -$\eta$$\frac{dL}{dW}$|w&#x3D;w$^0$</li>
+<li>dL : 陡峭程度</li>
+<li>$\eta$ : Learning Rate (学习速度) </li>
+<li>…… Need Many Iteration</li>
+<li>Final &#x3D;&gt; Local optimal</li>
+</ul>
+<h4 id="Two-parameters"><a href="#Two-parameters" class="headerlink" title="Two parameters"></a>Two parameters</h4><ul>
+<li>-$\eta$$\frac{dL}{dW}$|w&#x3D;w$^0$   -$\eta$$\frac{dL}{db}$|b&#x3D;b$^0$</li>
+<li>w$^0$,b$^0$ &#x3D;&gt; w$^1$,b$^1$<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706778.png" alt="Pasted image 20231223152409.png"></li>
+</ul>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
+<li>Error : $\Sigma$e$^n$ (e &#x3D; y - $\hat{y}$ )</li>
+<li>一个x是一条直线，预测精度不够，需要一个更复杂的model<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706235.png" alt="Pasted image 20231223153736.png"></li>
+</ul>
+<h3 id="Another-Model"><a href="#Another-Model" class="headerlink" title="Another Model"></a>Another Model</h3><ul>
+<li><p>考虑二次项的误差<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706370.png" alt="Pasted image 20231223153805.png"></p>
+</li>
+<li><p>考虑三次项的误差 (已经没有太大差别)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707777.png" alt="Pasted image 20231223153946.png"></p>
+</li>
+<li><p>考虑四次项 (误差反而变得更大了)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707610.png" alt="Pasted image 20231223154159.png"></p>
+</li>
+<li><p>考虑五次项 (误差爆炸，寄)</p>
+</li>
+</ul>
+<h3 id="Redesign-the-Model-Hidden-Factors"><a href="#Redesign-the-Model-Hidden-Factors" class="headerlink" title="Redesign the Model (Hidden Factors)"></a>Redesign the Model (Hidden Factors)</h3><ul>
+<li><p>以种族进行分类取得多组值，合并为一个Linear model<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707493.png" alt="Pasted image 20231223155323.png"></p>
+</li>
+<li><p>加入所有已知Factor</p>
+</li>
+<li><p>反而Overfitting(过拟合),误差值很大<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707860.png" alt="Pasted image 20231223155943.png"></p>
+</li>
+</ul>
+<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><ul>
+<li>L( f ) &#x3D; $\Sigma$( ( $y^n$ - ( b + w*$x^n$ ) )$^2$ + $\lambda$$\Sigma$(w$_i$)$^2$</li>
+<li>找到w的参数越小越好</li>
+</ul>
+
+    </div>
+
     
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/19" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/19</div>
-                <a href="/2023/10/19/markdown语法测试/">
-                    <h3>Markdown语法测试</h3>
-                </a>
-                <div class="info">
-                    
-
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#607d8b>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/17" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/17</div>
-                <a href="/2023/10/17/Web学习日志-1/">
-                    <h3>Web学习日志-1</h3>
-                </a>
-                <div class="info">
-                    
-
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Study" style=color:#016a99>
-                                Study
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/15" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/15</div>
-                <a href="/2023/10/15/My-first-blog/">
-                    <h3>My first blog</h3>
-                </a>
-                <div class="info">
-                    
-
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Chat" style=color:#607d8b>
-                                Chat
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2023/10/15" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2023/10/15</div>
-                <a href="/2023/10/15/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
     
 </div>
-
                      
 <footer id="footer">
     <div class="footer-wrap">
@@ -458,6 +330,21 @@
             }
         }
     })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'en',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
 </script>
 
 </body>
