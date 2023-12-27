@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || 机器学习李宏毅-1</title>
+    <title>Sakana&#39;s Blog || CS61A-Sequence</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>机器学习李宏毅-1 </h1>
+        <h1>CS61A-Sequence </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/12/23
+            2023/12/27
         </span>
 
         
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Study" style=color:#607d8b>
+                <a href="/tags/Study" style=color:#6484be>
                     Study
                 </a>
             </span>
@@ -200,63 +200,71 @@
     </div>
 
     <div class="content" v-pre>
-        <h2 id="Regression-Example-Poke"><a href="#Regression-Example-Poke" class="headerlink" title="Regression (Example:Poke)"></a>Regression (Example:Poke)</h2><h3 id="Step1-Model"><a href="#Step1-Model" class="headerlink" title="Step1:Model"></a>Step1:Model</h3><ul>
-<li>y&#x3D;b+w*x$_cp$   (weight&#x2F;bias)</li>
-<li>y&#x3D;b+$\Sigma$$w_i$$x_i$   (各种不同的属性) (feature)</li>
+        <h1 id="11-Sequence"><a href="#11-Sequence" class="headerlink" title="11-Sequence"></a>11-Sequence</h1><ul>
+<li>for &lt; suite &gt; in &lt; expression &gt;<br>(for x,y in sequence )</li>
 </ul>
-<h3 id="Step2-Goodness-of-Function"><a href="#Step2-Goodness-of-Function" class="headerlink" title="Step2:Goodness of Function"></a>Step2:Goodness of Function</h3><p>Training Data &#x3D;&gt; ($x^n$,$y^n$)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231705582.png" alt="Pasted image 20231223145442.png"></p>
+<h2 id="List-Comprehensions（迭代式）"><a href="#List-Comprehensions（迭代式）" class="headerlink" title="List Comprehensions（迭代式）"></a>List Comprehensions（迭代式）</h2><ul>
+<li>[ x+1 for x in odds ]</li>
+<li>[ x for x in odds if 25 % x &#x3D;&#x3D; 0 ]</li>
+<li>[ x for x in range(2, n) ]</li>
+<li>[out_exp_res  for  out_exp  in  input_list  (if condition) ]</li>
+<li>[ 表达式  for  变量  in  列表  (条件) ]</li>
+</ul>
 <span id="more"></span>
-
+<h2 id="Dict-Set-Tuple"><a href="#Dict-Set-Tuple" class="headerlink" title="*Dict&#x2F; Set&#x2F;Tuple"></a>*Dict&#x2F; Set&#x2F;Tuple</h2><ul>
+<li>{ key_expr: value_expr for value in collection if condition }</li>
+<li>{ expression for item in Sequence if conditional }</li>
+<li>(expression for item in Sequence if conditional )</li>
+</ul>
+<hr>
+<h1 id="12-Container"><a href="#12-Container" class="headerlink" title="12-Container"></a>12-Container</h1><h2 id="Slicing"><a href="#Slicing" class="headerlink" title="Slicing"></a>Slicing</h2><ul>
+<li>sum ( iterable [ ,start ] )</li>
+<li>max ( iterable [ ,key&#x3D;func ] )</li>
+<li>all ( iterable ) -&gt; bool_</li>
+</ul>
+<h2 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h2><ul>
+<li>输出键 : list( numerals )</li>
+<li>输出值 : numerals.values()</li>
+</ul>
+<hr>
+<h1 id="13-Abstraction"><a href="#13-Abstraction" class="headerlink" title="13-Abstraction"></a>13-Abstraction</h1><h2 id="Abstract-data"><a href="#Abstract-data" class="headerlink" title="Abstract data"></a>Abstract data</h2><p>Compound objects combine objects togrther（数据集合）<br>Isolate two parts of any program that uses data </p>
 <ul>
-<li><p>Loss function (func) :judge how bad the func is</p>
+<li>how data are presented（表示方式）</li>
+<li>how data are manipulated（操作方式）<br><strong>A methodology by which functions enforce an abstraction barrier between representation and use</strong></li>
+</ul>
+<h2 id="Pairs"><a href="#Pairs" class="headerlink" title="Pairs"></a>Pairs</h2><p>获取unit元素的方法</p>
+<ul>
+<li>A List Literal: Comma-separated expressions in brackets<ul>
+<li>pairs &#x3D; [1, 2]</li>
+</ul>
 </li>
-<li><p>L( f ) &#x3D; L( w, b ) &#x3D; $\Sigma$( ( $y^n$ - ( b + w*$x^n$ ) )$^2$</p>
+<li>Unpacking a List: <ul>
+<li>x, y &#x3D; pairs</li>
+</ul>
 </li>
-<li><p>计算估测误差值之和<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231705570.png" alt="Pasted image 20231223150232.png"></p>
+<li>Element Selection Operator:<ul>
+<li>x &#x3D; pairs[0]</li>
+</ul>
 </li>
-<li><p>Then Pick the Best Function</p>
-</li>
-<li><p>f$^*$ &#x3D; arg min L(f) &#x3D;&gt;w$^*$,b$^*$</p>
+<li>Element Selection Function:<ul>
+<li>getitme( pair, 0 )</li>
+</ul>
 </li>
 </ul>
-<h3 id="Step3-Gradient-Descent"><a href="#Step3-Gradient-Descent" class="headerlink" title="Step3:Gradient Descent"></a>Step3:Gradient Descent</h3><p><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706070.png" alt="Pasted image 20231223151022.png"></p>
-<h4 id="One-parameter"><a href="#One-parameter" class="headerlink" title="One parameter"></a>One parameter</h4><ul>
-<li>Step Size : -$\eta$$\frac{dL}{dW}$|w&#x3D;w$^0$</li>
-<li>dL : 陡峭程度</li>
-<li>$\eta$ : Learning Rate (学习速度) </li>
-<li>…… Need Many Iteration</li>
-<li>Final &#x3D;&gt; Local optimal</li>
-</ul>
-<h4 id="Two-parameters"><a href="#Two-parameters" class="headerlink" title="Two parameters"></a>Two parameters</h4><ul>
-<li>-$\eta$$\frac{dL}{dW}$|w&#x3D;w$^0$   -$\eta$$\frac{dL}{db}$|b&#x3D;b$^0$</li>
-<li>w$^0$,b$^0$ &#x3D;&gt; w$^1$,b$^1$<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706778.png" alt="Pasted image 20231223152409.png"></li>
-</ul>
-<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
-<li>Error : $\Sigma$e$^n$ (e &#x3D; y - $\hat{y}$ )</li>
-<li>一个x是一条直线，预测精度不够，需要一个更复杂的model<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706235.png" alt="Pasted image 20231223153736.png"></li>
-</ul>
-<h3 id="Another-Model"><a href="#Another-Model" class="headerlink" title="Another Model"></a>Another Model</h3><ul>
-<li><p>考虑二次项的误差<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231706370.png" alt="Pasted image 20231223153805.png"></p>
+<h2 id="Abstraction-Barriers"><a href="#Abstraction-Barriers" class="headerlink" title="Abstraction Barriers"></a>Abstraction Barriers</h2><ul>
+<li><p>不可以直接跨越抽象障碍进行操作  <strong>这种思想似乎非常重要</strong><br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312271514430.png" alt="image.png"></p>
 </li>
-<li><p>考虑三次项的误差 (已经没有太大差别)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707777.png" alt="Pasted image 20231223153946.png"></p>
-</li>
-<li><p>考虑四次项 (误差反而变得更大了)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707610.png" alt="Pasted image 20231223154159.png"></p>
-</li>
-<li><p>考虑五次项 (误差爆炸，寄)</p>
+<li><p>我想抽象的意义应该在于可以单独修改函数的某一部分而不影响整体，并且提升了代码的可阅读性</p>
 </li>
 </ul>
-<h3 id="Redesign-the-Model-Hidden-Factors"><a href="#Redesign-the-Model-Hidden-Factors" class="headerlink" title="Redesign the Model (Hidden Factors)"></a>Redesign the Model (Hidden Factors)</h3><ul>
-<li><p>以种族进行分类取得多组值，合并为一个Linear model<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707493.png" alt="Pasted image 20231223155323.png"></p>
-</li>
-<li><p>加入所有已知Factor</p>
-</li>
-<li><p>反而Overfitting(过拟合),误差值很大<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312231707860.png" alt="Pasted image 20231223155943.png"></p>
-</li>
+<hr>
+<h1 id="Lab04"><a href="#Lab04" class="headerlink" title="Lab04"></a>Lab04</h1><h3 id="Count-Palindromes-单行实现回文字检测"><a href="#Count-Palindromes-单行实现回文字检测" class="headerlink" title="Count Palindromes (单行实现回文字检测)"></a>Count Palindromes (单行实现回文字检测)</h3><p>The Python library defines <code>filter</code>, <code>map</code>, and <code>reduce</code>, which operate on Python sequences. Devise a function that counts the number of palindromic words (those that read the same backwards as forwards) in a tuple of words using only <code>lambda</code>, basic operations on strings, the tuple constructor, conditional expressions, and the functions <code>filter</code>, <code>map</code>, and <code>reduce</code>. </p>
+<ul>
+<li>只用一行 ( filter, map, reduce ) 实现回文字检测</li>
 </ul>
-<h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><ul>
-<li>L( f ) &#x3D; $\Sigma$( ( $y^n$ - ( b + w*$x^n$ ) )$^2$ + $\lambda$$\Sigma$(w$_i$)$^2$</li>
-<li>找到w的参数越小越好</li>
-</ul>
+<pre><code>def count_palindromes(L):
+    return len(list(filter(lambda x:x==True,list(map(lambda x:True if (len(x)%2==0 and x.lower()[0:len(x)//2]==x.lower()[len(x)-1:len(x)//2-1:-1])or(len(x)%2==1 and x.lower()[0:len(x)//2]==x.lower()[len(x)-1:len(x)//2:-1]) else False,L)))))
+</code></pre>
 
     </div>
 
