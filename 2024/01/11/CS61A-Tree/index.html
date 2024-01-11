@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || Web学习日志-1</title>
+    <title>Sakana&#39;s Blog || CS61A-Tree</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>Web学习日志-1 </h1>
+        <h1>CS61A-Tree </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/10/17
+            2024/1/11
         </span>
 
         
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Study" style=color:#016a99>
+                <a href="/tags/Study" style=color:#6484be>
                     Study
                 </a>
             </span>
@@ -200,11 +200,83 @@
     </div>
 
     <div class="content" v-pre>
-        <p><strong>今天终于搞定了mini的knife和小游戏</strong></p>
-<h3 id="小游戏"><a href="#小游戏" class="headerlink" title="小游戏"></a>小游戏</h3><p>小游戏是之前一直没有尝试在上传图片的过程中抓包，所以一直没发现解法<br>其实只要随便传一张图片，在抓包时修改http请求就可以了<br>但是在开发者模式下还找到了一张大眼睛的gif图，不知道是不是还有彩蛋？</p>
+        <h1 id="14-Tree"><a href="#14-Tree" class="headerlink" title="14-Tree"></a>14-Tree</h1><h2 id="Construction"><a href="#Construction" class="headerlink" title="Construction"></a>Construction</h2><p><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202401031116553.png" alt="image.png"></p>
+<h2 id="Tree-Abstraction"><a href="#Tree-Abstraction" class="headerlink" title="Tree Abstraction"></a>Tree Abstraction</h2><p>tree( 3, [ tree( 1 ), tree ( 2, [ tree( 1 ), tree( 1 ) ] ) ]</p>
+<h2 id="Sum-Path"><a href="#Sum-Path" class="headerlink" title="Sum Path"></a>Sum Path</h2><ul>
+<li>将n作为计数器，用k叠加</li>
+</ul>
+<pre><code>def fact_times(n, k):
+    if n==0:
+        return k
+    else:
+        return fact_times(n-1, k*n)
+</code></pre>
 <span id="more"></span>
-<h3 id="Knief"><a href="#Knief" class="headerlink" title="Knief"></a>Knief</h3><p>这个确实苦恼了很久<br>尝试了很多软件，最后用御剑找到了隐藏的后门网址<br>再用蚁剑链接后门，找到了flag<br>不过要怎么靠自己注入木马，还是完全没什么头绪呢……</p>
-<p>今天就学到这里吧，准备睡觉（怎么可能）！</p>
+
+<hr>
+<h1 id="15-Mutability"><a href="#15-Mutability" class="headerlink" title="15-Mutability"></a>15-Mutability</h1><h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><ul>
+<li>name . attribute</li>
+</ul>
+<h2 id="Mutability-List"><a href="#Mutability-List" class="headerlink" title="Mutability List"></a>Mutability List</h2><ul>
+<li>arrayx 与 array 始终相同 （同一对象）</li>
+</ul>
+<pre><code>array=[1,2,3,4,5]
+
+arrayx = array
+
+array.pop()
+
+array.append(1)
+
+array.extend([8,9])
+...
+print(arrayx)
+</code></pre>
+<ul>
+<li>Mutation: 突变，指对象发生变化</li>
+</ul>
+<h2 id="Tuples（不可变列表）"><a href="#Tuples（不可变列表）" class="headerlink" title="Tuples（不可变列表）"></a>Tuples（不可变列表）</h2><ul>
+<li>基础语法</li>
+</ul>
+<pre><code>(3, 4, 5, 6)
+tuple([ 3, 4, 5 ])
+(2, ) #单个元素元组
+</code></pre>
+<ul>
+<li>若元组中的元素可变（如列表），则可以修改</li>
+</ul>
+<h2 id="Identity"><a href="#Identity" class="headerlink" title="Identity"></a>Identity</h2><ul>
+<li>is : 对象相同</li>
+<li>&#x3D;&#x3D; : 数值上相等</li>
+</ul>
+<p>PS：默认参数值是同一个，反复调用同一函数导致默认参数值突变可能会出错</p>
+<hr>
+<h1 id="16-Iterators-迭代器"><a href="#16-Iterators-迭代器" class="headerlink" title="16-Iterators(迭代器)"></a>16-Iterators(迭代器)</h1><h2 id="List-Iterator"><a href="#List-Iterator" class="headerlink" title="List Iterator"></a>List Iterator</h2><ul>
+<li>进入迭代：x &#x3D; iter( [list] ) </li>
+<li>下一个值：next ( t )</li>
+<li>输出剩余值：list ( t )</li>
+</ul>
+<pre><code>s=[ 3, 4, 5 ]
+t = iter(s) #t进入迭代,t=3
+next(t) #t=4
+next(t) #t=5
+
+u = iter(s) #新的迭代,u=3
+</code></pre>
+<h2 id="Dic-Iterator"><a href="#Dic-Iterator" class="headerlink" title="Dic Iterator"></a>Dic Iterator</h2><ul>
+<li>迭代键：k &#x3D; iter( d.keys( ) )  # or iter( d )</li>
+<li>迭代值：v &#x3D; iter( d.values( ) )</li>
+<li>迭代键值对：i &#x3D; iter( d.items( ) )</li>
+</ul>
+<p>PS：迭代期间字典大小不能发生变化（可以改变值）</p>
+<h2 id="‘For’-Statement"><a href="#‘For’-Statement" class="headerlink" title="‘For’ Statement"></a>‘For’ Statement</h2><ul>
+<li>for 语句同样推动迭代器迭代</li>
+<li>被for&#x2F;list 过的迭代器将失效</li>
+</ul>
+<pre><code>ri = iter( range(3,6) )
+for r in ri:
+    print(r) #ri 失效
+</code></pre>
 
     </div>
 
