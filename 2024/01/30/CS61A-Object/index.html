@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || Python速通日志-1</title>
+    <title>Sakana&#39;s Blog || CS61A-Object</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>Python速通日志-1 </h1>
+        <h1>CS61A-Object </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/10/23
+            2024/1/30
         </span>
 
         
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Study" style=color:#607d8b>
+                <a href="/tags/Study" style=color:#006674>
                     Study
                 </a>
             </span>
@@ -200,12 +200,76 @@
     </div>
 
     <div class="content" v-pre>
-        <p>学了一部分的html的语法，写博客也能方便一点<br>思来想去还是决定先进行python的学习和c语言的巩固</p>
-<p>这两个星期考虑了很多方向<br>是继续探索一些网安的新东西，还是去学web开发，毕竟我个人对网络上的东西更感兴趣一些<br>不过最终还是决定先学会python吧，盲目的学习html和js，也没有什么目标，感觉上会比较迷茫<br>所以决定长线作战，在闲暇之时慢慢把html和js的语法先看完，之后上手起来也比较快</p>
+        <h1 id="17-Generator"><a href="#17-Generator" class="headerlink" title="17-Generator"></a>17-Generator</h1><h2 id="Yield"><a href="#Yield" class="headerlink" title="Yield"></a>Yield</h2><ul>
+<li>用yield代替return，可以返回多次</li>
+<li>返回值是一个iterator</li>
+</ul>
+<pre><code>#yield from
+for x in a:
+    yield a
+# 等价于
+yield from a
+</code></pre>
 <span id="more"></span>
-<p><del>毕竟我还是挺想自己搭一个自己写的网站的</del></p>
-<p>对于python，决定先从“聪明方法学python”入手，把高中的东西先回忆起来<br>之后再通过cs61a加强自己<br>话说学完c之后python真的是忘得一干二净了啊……<br>今天看的视频都比较基础，就不写笔记了，这就算是一边记录的日记</p>
-<p><em>之后会在尾部附上写这篇博客时听的歌</em><br><em>——雨き声残響 鹿乃</em></p>
+<ul>
+<li>获得一个单词中的所有字串</li>
+</ul>
+<pre><code>def prefixes(s):
+    if s:
+    yield from prefixer(s[:-1])
+    yield s
+
+def substrings(s):
+    if s:
+        yield from prefisxes(s)
+        yield from substrings(s[1:])
+</code></pre>
+<h2 id="Example-partitions"><a href="#Example-partitions" class="headerlink" title="Example: partitions"></a>Example: partitions</h2><pre><code>def partitions(n, m):
+    if n&gt;0 and m&gt;0:
+        if n==m:
+            yield str(m)
+        for p in partiotions(n-m, m):
+            yield p+&#39;+&#39;+str(m)
+        yield from partitions(n, m-1)
+</code></pre>
+<hr>
+<h1 id="18-19-Object-Attribute"><a href="#18-19-Object-Attribute" class="headerlink" title="18&#x2F;19-Object&#x2F;Attribute"></a>18&#x2F;19-Object&#x2F;Attribute</h1><h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><pre><code>calss &lt;name&gt;:
+    name = XXX
+    def dance():
+        return XXX
+    ...
+    &lt;suite&gt; #attributes
+</code></pre>
+<ul>
+<li>使用__init__初始化class</li>
+<li>self: A new instance of the class in create #相当于一张等待书写的白纸</li>
+</ul>
+<pre><code>class Account:
+    def __init__(self, account_holder): #Constructor
+        self.balance = 0 
+        self.holder = account_holder
+</code></pre>
+<h2 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h2><ul>
+<li>类中的attribute值改变，所有实例的值跟着改变</li>
+<li>class中为function，instance中为method</li>
+</ul>
+<hr>
+<h1 id="Ant"><a href="#Ant" class="headerlink" title="Ant"></a>Ant</h1><ul>
+<li>以类造类</li>
+<li>将父类属性和函数传递给子类（用下面的函数继承）</li>
+</ul>
+<pre><code>class FireAnt(Ant):
+or
+class LongThrower(ThrowerAnt)
+</code></pre>
+<ul>
+<li>父类继承 (继承父类属性，或将变量传递给父类构造函数)</li>
+<li>super() 用于多重继承，当有多个继承出现时使用</li>
+</ul>
+<pre><code>class Chidren(Partents):
+    def __init__ (self, value):
+        super.__init__(value)
+</code></pre>
 
     </div>
 
