@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || Python速通日志-2</title>
+    <title>Sakana&#39;s Blog || CS61A-Inherit</title>
     <meta name="author" content="Sakana">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>Python速通日志-2 </h1>
+        <h1>CS61A-Inherit </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/10/25
+            2024/2/5
         </span>
 
         
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Study" style=color:#6484be>
+                <a href="/tags/Study" style=color:#607d8b>
                     Study
                 </a>
             </span>
@@ -200,52 +200,71 @@
     </div>
 
     <div class="content" v-pre>
-        <p><em>稍微记录一下而已</em></p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：#<br>多行：“”“或者’’’</p>
-<h2 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h2><p>int&#x2F;flaot&#x2F;bool&#x2F;complex</p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>1.’与”无区别<br>2.’’’可用于”””输出多行字符串<br>3.变量[头下标: 尾下标: 步长]</p>
-<p><em>还是跳过一些吧，细节太多了点……</em></p>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><span id="more"></span>
-<pre><code>list = ['red', 'green', 'blue', 'yellow', 'white', 'black']
-print( list[0] )
-print( list[1] )
-print( list[2] )</pre></code>
+        <h1 id="20-Inheritance"><a href="#20-Inheritance" class="headerlink" title="20-Inheritance"></a>20-Inheritance</h1><h2 id="Inherit"><a href="#Inherit" class="headerlink" title="Inherit"></a>Inherit</h2><ul>
+<li>两个类相似的情况，可以使用继承</li>
+</ul>
+<pre><code>class &lt;name&gt; (&lt;base class&gt;):
+    &lt;suite&gt;
+</code></pre>
+<ul>
+<li><p>Dont repeat your self !</p>
+<h2 id="Multiple-Inheritance"><a href="#Multiple-Inheritance" class="headerlink" title="Multiple Inheritance"></a>Multiple Inheritance</h2><ul>
+<li>可以一次继承多个类</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+<pre><code>class &lt;name&gt; (&lt;baseclass1&gt;, &lt;baseclass2&gt;):
+    &lt;suite&gt;
+</code></pre>
+<hr>
+<h1 id="21-Representation"><a href="#21-Representation" class="headerlink" title="21-Representation"></a>21-Representation</h1><h2 id="Represatation"><a href="#Represatation" class="headerlink" title="Represatation"></a>Represatation</h2><ul>
+<li>‘str’：人类解释语言</li>
+<li>‘repr’：python解释语言</li>
+<li>‘eval’：返回传入字符串表达式的结果</li>
+</ul>
+<pre><code>half = Fraction(1, 2)
+repr(half) # Fraction(1, 2)
+str(half) # 1/2
 
-<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><p><strong>元组内数据无法更改，但两个元组可以进行拼接</strong></p>
-<pre><code>tup1 = (12, 34.56)
-tup2 = ('abc', 'xyz')
- 
-**以下修改元组元素操作是非法的。**
-tup1[0] = 100
- 
-**创建一个新的元组**
-tup3 = tup1 + tup2
-print (tup3)</code></pre>
+repr(half) =&gt; half.__repr__()
+str(half) =&gt; half.__str__()
+</code></pre>
+<h2 id="F-String"><a href="#F-String" class="headerlink" title="F-String"></a>F-String</h2><pre><code>from math import pi
+print(f &#39;pi starts with &#123;pi&#125;&#39; )
 
-<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><pre><code>tinydict = &#123;'Name': 'Runoob', 'Age': 7, 'Class': 'First'&#125;
- 
-tinydict['Age'] = 8               # 更新 Age
-tinydict['School'] = "菜鸟教程"  # 添加信息
- 
- 
-print ("tinydict['Age']: ", tinydict['Age'])
-print ("tinydict['School']: ", tinydict['School'])</code></pre>
-
-<h2 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><pre><code>if condition_1:
-    statement_block_1
-elif condition_2:
-    statement_block_2
-else:
-    statement_block_3</code></pre>
-
-<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><pre><code>while 判断条件(condition)：
-    执行语句(statements)……</code></pre>
-
-<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><pre><code>def 函数名（参数列表）:
-    函数体</code></pre>
-
-<p>好了，回忆的差不多了，该去看cs61a了（悲</p>
-<p><em>栞——MyGo!!!</em></p>
+print(&#39;Ratio(&#123;0&#125;,&#123;1&#125;)&#39;.format(self.number,self.index))
+</code></pre>
+<ul>
+<li>type(x)：实例repr可能会被修改，type保证取的是x所属类的repr</li>
+<li>__ repr __ (x)：x是self</li>
+<li>若没有str属性，则用repr属性代替</li>
+</ul>
+<pre><code>def repr(x):
+    return type(x).__repr__(x)
+</code></pre>
+<hr>
+<h1 id="22-Composition"><a href="#22-Composition" class="headerlink" title="22-Composition"></a>22-Composition</h1><h2 id="Link-List"><a href="#Link-List" class="headerlink" title="Link List"></a>Link List</h2><pre><code>s = Link(1, Link(2, Link(3)))
+s.first = 5
+t = s.rest
+t.rest = s  #(5,2)循环
+s.rest.rest.rest.rest.rest.first == 2
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402041709282.png" alt="image.png"></p>
+<pre><code>def add(s, v)
+    if s.first&gt;v:
+        s.first, s.rest = v, Link(s.first, s.rest)
+    elif s.first&lt;v and empty(s.rest):
+        s.rest = Link(v)
+    elif s.first&lt;v:
+        add(s.rest, v)
+    return s
+</code></pre>
+<h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><ul>
+<li>数据抽象&#x2F;面向对象都强调封装，将数据和方法组合在一起，以便于管理和隐藏实现细节。</li>
+<li>而面向对象中抽象类是一种特殊的类，不能被实例化</li>
+</ul>
+<hr>
 
     </div>
 
