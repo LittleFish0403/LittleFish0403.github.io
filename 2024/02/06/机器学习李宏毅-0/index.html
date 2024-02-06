@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || Markdown语法测试</title>
+    <title>Sakana&#39;s Blog || 机器学习李宏毅-0</title>
     <meta name="author" content="">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>Markdown语法测试 </h1>
+        <h1>机器学习李宏毅-0 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/10/19
+            2024/2/6
         </span>
 
         
@@ -190,7 +190,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Study" style=color:#607d8b>
+                <a href="/tags/Study" style=color:#6484be>
                     Study
                 </a>
             </span>
@@ -200,28 +200,105 @@
     </div>
 
     <div class="content" v-pre>
-        <h1 id="这是最大的标题"><a href="#这是最大的标题" class="headerlink" title="这是最大的标题"></a>这是最大的标题</h1><h2 id="第二大的标题"><a href="#第二大的标题" class="headerlink" title="第二大的标题"></a>第二大的标题</h2><h3 id="第三大的标题"><a href="#第三大的标题" class="headerlink" title="第三大的标题"></a>第三大的标题</h3><p>标题是用#来对应html中的h1-h6</p>
-<h2 id="强调和斜体"><a href="#强调和斜体" class="headerlink" title="强调和斜体"></a>强调和斜体</h2><p><strong>这是一个强调语句</strong><br><em>这是一个斜体语句</em><br><del>这是一个删除语句</del></p>
-<p>分别靠*和**来实现，对应html的b和em</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><span id="more"></span>
-<p>1.一号<br>2.二号<br>3.三号</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><blockequot>这应该是一个引用的句子<br/><br>  可以实现多级引用<br/><br>  就像这样<br/><br>还是挺好玩的</p>
-</blockquote>
-
-<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><p>下面是一串代码</p>
-<pre><code>
-#include <stdio.h>
-int main()
-&#123;
-    printf("hello");
-    return 0;
-&#125;
-</code></pre>
-<p>似乎markdown也能使用html的语法</p>
-<p>不知道这样能不能有用，毕竟还是在测试</p>
-<h2 id="网页跳转"><a href="#网页跳转" class="headerlink" title="网页跳转"></a>网页跳转</h2><p><a href="https://littlefish0403.github.io/">https://littlefish0403.github.io/</a><br><a href="mailto:&#x31;&#x30;&#x34;&#x31;&#x33;&#54;&#53;&#x30;&#x37;&#x38;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x31;&#x30;&#x34;&#x31;&#x33;&#54;&#53;&#x30;&#x37;&#x38;&#64;&#113;&#113;&#x2e;&#99;&#111;&#109;</a><br>要插入一个网址也很简单，用&lt;&gt;括起来就行</p>
-<h2 id="图片的插入"><a href="#图片的插入" class="headerlink" title="图片的插入"></a>图片的插入</h2><p><img src="/image/3.jpg" alt="这是一张二次元美图" title="这是一张二次元美图"><br>这是图片的引用<br><a href="https://littlefish0403.github.io/"><img src="/image/3.jpg" alt="这是一张二次元美图" title="这是一张二次元美图"></a><br>点击图片可以跳转</p>
-<p><em><strong>大概就这些啦</strong></em></p>
+        <h2 id="机器学习的本质"><a href="#机器学习的本质" class="headerlink" title="机器学习的本质"></a>机器学习的本质</h2><ul>
+<li>自动寻找一个函数的能力</li>
+</ul>
+<h2 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h2><ul>
+<li>Regression: The function outputs a scalar<ul>
+<li>寻找一个具体数值</li>
+</ul>
+</li>
+<li>Classification: Given options(class),thr function outputs the correct one<ul>
+<li>从选项中进行选择</li>
+</ul>
+</li>
+<li>Structured Learning: create somrthing with struction<ul>
+<li>让机器创造具有结构性的输出 <span id="more"></span></li>
+</ul>
+</li>
+</ul>
+<h2 id="研究步骤-Linear-Model"><a href="#研究步骤-Linear-Model" class="headerlink" title="研究步骤(Linear Model)"></a>研究步骤(Linear Model)</h2><ol>
+<li><p>假设Model（猜测关系）</p>
+<ul>
+<li>Based on Domain Knowledge</li>
+<li>Model ( weight&#x2F;bias ): a function</li>
+</ul>
+</li>
+<li><p>定义Loss（确定Model好不好用）</p>
+<ul>
+<li>Loss: a function, how good a set of value is </li>
+<li>Label: 正确的数值</li>
+<li>Feature: 一个特征，一个可能影响结果的数值</li>
+<li>MAE(mean absolute error): |y-y^|</li>
+<li>MSE(mean square error): (y-y^)^2</li>
+</ul>
+</li>
+<li><p>最佳化问题(Optimization)</p>
+<ul>
+<li>Gradient Descent: 一种常用的optimization的方法，计算最佳w,b</li>
+<li>Hyperparameters: 机器学习中需要自己设定的值</li>
+<li>Global minima: LossFunction真正的最低点</li>
+<li>Local minima: 微分值为0但并非最低点</li>
+<li>Error Surface: 将Loss函数绘制为权重</li>
+</ul>
+</li>
+</ol>
+<h2 id="优化第一步：预测模型优化"><a href="#优化第一步：预测模型优化" class="headerlink" title="优化第一步：预测模型优化"></a>优化第一步：预测模型优化</h2><ol>
+<li>突破Model Bias</li>
+</ol>
+<ul>
+<li>Linear Model有很大限制(Model Bias)</li>
+<li>Piecewise Linear Curves &#x3D; constant + sum of a set of (blue curve)<ul>
+<li>曲线也可以转化为piecewise linear<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061230369.png" alt="image.png"></li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>寻找Blue Function</li>
+</ol>
+<ul>
+<li><p>Sigmoid Function (S型Function)<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061234148.png" alt="image.png"></p>
+</li>
+<li><p>Hard Sigmoid<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061236460.png" alt="image.png"></p>
+</li>
+<li><p>w&#x2F;b&#x2F;c: Change slopes&#x2F;shift&#x2F;height</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>最终的方程（针对piecewise linear function）<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061238334.png" alt="image.png"></p>
+</li>
+<li><p>计算展开（更加直观辣）<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061243656.png" alt="image.png"></p>
+</li>
+</ol>
+<ul>
+<li><p>用矩阵表示结果<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061244550.png" alt="image.png"></p>
+</li>
+<li><p>最终结果<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061249347.png" alt="image.png"></p>
+</li>
+<li><p>$\theta$: 将所有未知变量放在一个列向量中</p>
+</li>
+</ul>
+<h2 id="优化第二部步：根据新模型更改Loss"><a href="#优化第二部步：根据新模型更改Loss" class="headerlink" title="优化第二部步：根据新模型更改Loss"></a>优化第二部步：根据新模型更改Loss</h2><ul>
+<li>Gradient: 所有变量微分值所组成的列向量<ul>
+<li>写作 g&#x3D;▽L ( $\theta$ $^0$ )</li>
+</ul>
+</li>
+<li>Update: 每一次更新参数</li>
+<li>Epoch: See all the batches once<ul>
+<li>一个epoch通常包含多次update</li>
+</ul>
+</li>
+</ul>
+<h2 id="优化第三步：反复多做几次"><a href="#优化第三步：反复多做几次" class="headerlink" title="优化第三步：反复多做几次"></a>优化第三步：反复多做几次</h2><ul>
+<li><p>以a为参数再进行修正</p>
+</li>
+<li><p>神经网络（Neural）</p>
+</li>
+<li><p>每一次反复都是一层layer<br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202402061723819.png" alt="image.png"></p>
+</li>
+<li><p>Overfitting：过拟合</p>
+</li>
+</ul>
 
     </div>
 
