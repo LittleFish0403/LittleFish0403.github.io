@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || CS61A-Sequence</title>
+    <title>Sakana&#39;s Blog || CS61B-Java_Start</title>
     <meta name="author" content="">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -169,14 +169,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>CS61A-Sequence </h1>
+        <h1>CS61B-Java_Start </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2023/12/27
+            2024/4/8
         </span>
 
         
@@ -200,70 +200,91 @@
     </div>
 
     <div class="content" v-pre>
-        <h1 id="11-Sequence"><a href="#11-Sequence" class="headerlink" title="11-Sequence"></a>11-Sequence</h1><ul>
-<li>for &lt; suite &gt; in &lt; expression &gt;<br>(for x,y in sequence )</li>
+        <h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
+<li>强类语言，所有代码都必须为类的一部分<ul>
+<li>类定义方式“Public class CLASSNAME”</li>
 </ul>
-<h2 id="List-Comprehensions（迭代式）"><a href="#List-Comprehensions（迭代式）" class="headerlink" title="List Comprehensions（迭代式）"></a>List Comprehensions（迭代式）</h2><ul>
-<li>[ x+1 for x in odds ]</li>
-<li>[ x for x in odds if 25 % x &#x3D;&#x3D; 0 ]</li>
-<li>[ x for x in range(2, n) ]</li>
-<li>[out_exp_res  for  out_exp  in  input_list  (if condition) ]</li>
-<li>[ 表达式  for  变量  in  列表  (条件) ]</li>
+</li>
+<li>使用 { } 描述开始与结束</li>
+<li>结束时使用 ;</li>
+<li>想运行的代码必须位于 “public static void main(String[] args)” 之中</li>
+<li>使用变量前需要声明，且类型无法强制转化</li>
+<li>函数在类之中，并用 “public static” 定义函数（公共静态）<span id="more"></span></li>
 </ul>
-<span id="more"></span>
-<h2 id="Dict-Set-Tuple"><a href="#Dict-Set-Tuple" class="headerlink" title="*Dict&#x2F; Set&#x2F;Tuple"></a>*Dict&#x2F; Set&#x2F;Tuple</h2><ul>
-<li>{ key_expr: value_expr for value in collection if condition }</li>
-<li>{ expression for item in Sequence if conditional }</li>
-<li>(expression for item in Sequence if conditional )</li>
-</ul>
-<hr>
-<h1 id="12-Container"><a href="#12-Container" class="headerlink" title="12-Container"></a>12-Container</h1><h2 id="Slicing"><a href="#Slicing" class="headerlink" title="Slicing"></a>Slicing</h2><ul>
-<li>sum ( iterable [ ,start ] )</li>
-<li>max ( iterable [ ,key&#x3D;func ] )</li>
-<li>all ( iterable ) -&gt; bool_</li>
-</ul>
-<h2 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h2><ul>
-<li>输出键 : list( numerals )</li>
-<li>输出值 : numerals.values()</li>
-</ul>
-<hr>
-<h1 id="13-Abstraction"><a href="#13-Abstraction" class="headerlink" title="13-Abstraction"></a>13-Abstraction</h1><h2 id="Abstract-data"><a href="#Abstract-data" class="headerlink" title="Abstract data"></a>Abstract data</h2><p>Compound objects combine objects togrther（数据集合）<br>Isolate two parts of any program that uses data </p>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://sp24.datastructur.es/homeworks/hw0/hw0a/">作业 0A：Java 语法 |CS 61B 春季 2024 — Homework 0A: Java Syntax | CS 61B Spring 2024 (datastructur.es)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://sp24.datastructur.es/homeworks/hw0/hw0b/#assignment-setup">作业 0B：数据结构 |CS 61B 春季 2024 — Homework 0B: Data Structures | CS 61B Spring 2024</a></p>
+</li>
+<li><p>一些注意点</p>
 <ul>
-<li>how data are presented（表示方式）</li>
-<li>how data are manipulated（操作方式）<br><strong>A methodology by which functions enforce an abstraction barrier between representation and use</strong></li>
+<li>array不能直接打印，使用 Arrays.toString(array)</li>
+<li>array不支持切片和负索引</li>
 </ul>
-<h2 id="Pairs"><a href="#Pairs" class="headerlink" title="Pairs"></a>Pairs</h2><p>获取unit元素的方法</p>
-<ul>
-<li>A List Literal: Comma-separated expressions in brackets<ul>
-<li>pairs &#x3D; [1, 2]</li>
-</ul>
-</li>
-<li>Unpacking a List: <ul>
-<li>x, y &#x3D; pairs</li>
-</ul>
-</li>
-<li>Element Selection Operator:<ul>
-<li>x &#x3D; pairs[0]</li>
-</ul>
-</li>
-<li>Element Selection Function:<ul>
-<li>getitme( pair, 0 )</li>
-</ul>
-</li>
-</ul>
-<h2 id="Abstraction-Barriers"><a href="#Abstraction-Barriers" class="headerlink" title="Abstraction Barriers"></a>Abstraction Barriers</h2><ul>
-<li><p>不可以直接跨越抽象障碍进行操作  <strong>这种思想似乎非常重要</strong><br><img src="https://cdn.jsdelivr.net/gh/LittleFish0403/Image@main/202312271514430.png" alt="image.png"></p>
-</li>
-<li><p>我想抽象的意义应该在于可以单独修改函数的某一部分而不影响整体，并且提升了代码的可阅读性</p>
 </li>
 </ul>
 <hr>
-<h1 id="Lab04"><a href="#Lab04" class="headerlink" title="Lab04"></a>Lab04</h1><h3 id="Count-Palindromes-单行实现回文字检测"><a href="#Count-Palindromes-单行实现回文字检测" class="headerlink" title="Count Palindromes (单行实现回文字检测)"></a>Count Palindromes (单行实现回文字检测)</h3><p>The Python library defines <code>filter</code>, <code>map</code>, and <code>reduce</code>, which operate on Python sequences. Devise a function that counts the number of palindromic words (those that read the same backwards as forwards) in a tuple of words using only <code>lambda</code>, basic operations on strings, the tuple constructor, conditional expressions, and the functions <code>filter</code>, <code>map</code>, and <code>reduce</code>. </p>
-<ul>
-<li>只用一行 ( filter, map, reduce ) 实现回文字检测</li>
+<h1 id="类的使用"><a href="#类的使用" class="headerlink" title="类的使用"></a>类的使用</h1><ul>
+<li>将使用的类的静态（static）删除</li>
+<li>在main函数中创建实例<ul>
+<li>Dog d &#x3D; new Dog()</li>
 </ul>
-<pre><code>def count_palindromes(L):
-    return len(list(filter(lambda x:x==True,list(map(lambda x:True if (len(x)%2==0 and x.lower()[0:len(x)//2]==x.lower()[len(x)-1:len(x)//2-1:-1])or(len(x)%2==1 and x.lower()[0:len(x)//2]==x.lower()[len(x)-1:len(x)//2:-1]) else False,L)))))
+</li>
+<li>接下来的操作在d上发生</li>
+<li>唯一构造函数，用于定义类中的变量（__init__）<ul>
+<li>public Dog（int x）</li>
+</ul>
+</li>
+</ul>
+<h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><ul>
+<li>静态：函数无法访问上下文的函数外的变量</li>
+<li>Dog Smalldog 声明狗变量</li>
+<li>new Dog（10）创造狗实例，但无法保留</li>
+<li>Dog[] dogs&#x3D;new Dog[2] 创造狗列表，无实例</li>
+<li>dogs[0] &#x3D; new Dog(20) 创建狗实例</li>
+</ul>
+<h1 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h1><ul>
+<li>静态方法和实例方法（非静态方法）</li>
+<li>静态方法<ul>
+<li>无法访问实例变量</li>
+</ul>
+</li>
+<li>实例方法<ul>
+<li>需要实例化以后才可以使用</li>
+</ul>
+</li>
+<li>感觉像是python中函数和类方法之间的差异，一个调用类名，一个调用实例</li>
+</ul>
+<pre><code>public static Dog maxDog(Dog d1, Dog d2) &#123;
+   if (d1.weightInPounds &gt; d2.weightInPounds) &#123;
+      return d1;
+   &#125;
+   return d2;
+&#125;
+//静态方法
+调用：Dog.maxDog(d, d2)
+
+
+public Dog maxDog(Dog d2) &#123;
+     if (weight &gt; d2.weight) &#123;
+        return this;
+     &#125;
+//非静态方法
+调用：bigger = d.maxDog(d2);
+</code></pre>
+<hr>
+<h1 id="编写程序的思考方式"><a href="#编写程序的思考方式" class="headerlink" title="编写程序的思考方式"></a>编写程序的思考方式</h1><ul>
+<li>增加代码可读性</li>
+<li>help method</li>
+</ul>
+<hr>
+<h1 id="附：Git使用方法"><a href="#附：Git使用方法" class="headerlink" title="附：Git使用方法"></a>附：Git使用方法</h1><ul>
+<li>上传步骤</li>
+</ul>
+<pre><code>git add lab01/src/Arithmetic.java
+git commit -m &quot;lab01: Completed Arithmetic.java&quot;
+
+git push origin main
 </code></pre>
 
     </div>
