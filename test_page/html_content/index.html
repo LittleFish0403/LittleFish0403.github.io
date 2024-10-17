@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML学习页</title>
+        <link rel="stylesheet" href="styles\styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>HTML学习页</h1>
+        </header>
+
+        <nav>
+        <ol>
+            <li>Home</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ol>    
+        </nav>
+
+        <aside>
+            <h2>目录</h2>
+            <ol class="Content">
+                <li><a href="index.html#1">元素</a></li>
+                <li><a href="index.html#2">属性</a></li>
+                <li><a href="index.html#3">框架</a></li>
+                <li><a href="index.html#4">文本处理 </a></li>
+                <li><a href="index.html#5">链接</a></li>
+            </ol>
+        </aside>
+
+        <hr>
+
+        <main>
+            <h2 id="1">元素</h2>
+            <ul>
+            <li>嵌套元素</li>
+            <li>块级元素</li>
+            <li>内联元素</li>
+            <li>空元素：只有一个标签</li>
+            <ul>
+                <li>< img ></li>
+            </ul>
+            <li>无语义元素</li>
+            <ul>
+                <li>span/div</li>
+            </ul>
+        </ul>
+
+        <h2 id="2">属性</h2>
+        <ul>
+            <li>一个空格，它在属性和元素名称之间。如果一个元素具有<em>多个属性</em>，则每个属性之间必须由<strong>空格分隔</strong>。</li>
+            <li>属性名称，后面跟着一个等于号。</li>
+            <li>一个属性值，由一对引号（""）引起来。</li>
+            <ul>
+                <li>< a >：超链接</li>
+            </ul>
+        </ul>
+
+        <h2  id="3">框架</h2>
+        <ul>
+            <li>doctype</li>
+            <li>html</li>
+            <ul>
+                <li>head</li>
+                    <ul>
+                        <li>meta</li>
+                        <li>title</li>
+                    </ul>
+                <li>body</li>
+            </ul>
+        </ul>
+
+        <h2 id="4">文本处理</h2>
+        <ul>
+            <li>段落元素 p</li>
+            <li>标题元素 h1/h2/h3</li>
+            <li>列表元素 ul/ol li</li>
+            <li>语义元素</li>
+            <ul>
+                <li><em>强调</em> em</li>
+                <li><strong>强烈</strong> strong</li>
+            </ul>
+            <li>表象元素</li>
+            <ul>
+                <li><b>粗体</b> b</li>
+                <li><i>斜体</i> i</li>
+                <li><u>下划体</u> u</li>
+            </ul>
+            <li>换行 br</li>
+            <li>水平分割线 hr</li>
+            <li>引用（感觉没啥用）</li>
+            <li>缩略语:显示提示 abbr(title)</li>
+            <li>上标/下标 sup/sub</li>
+            <li>时间 time(date)</li>
+
+
+        </ul>
+
+        <h2 id="5">链接</h2>
+        <p>想给什么加链接,就用<strong>" < a href="">< /a> "</strong>给他包起来</p>
+        <ul>
+            <li>块级链接</li>
+            <li>图片链接</li>
+            <li>加title 作为提示信息</li>
+            <li>可以指向其他页面</li>
+            <li>可以指向文档片段</li>
+            <ol>
+                <li>给片段设置id</li>
+                <li>将链接设置为"index.html# + id "</li>
+            </ol>
+        </ul>
+
+        <h2 id="6">网页结构</h2>
+        <ul>
+            <li>页眉 header</li>
+            <li>导航栏 nav</li>
+            <li>主内容 main</li>
+            <li>侧边栏 aside</li>
+            <li>页脚 footer</li>
+            <li>文章内容 article</li>
+        </ul>
+
+        <h2 id="7">多媒体嵌入</h2>
+        <li>图片</li>
+        <ul>
+            <li>< img > (src alt)</li>
+            <li>设置预设宽高 width/height</li>
+            <li>图像标题 title</li>
+        </ul>
+        <li>视频/音频</li>
+        <ul>
+            <li>video src</li>
+            <li>audio src</li>
+            <li>controls autoplay loop</li>
+        </ul>
+        <li>嵌入(B站视频)</li>
+        <ul>
+            <li>直接复制视频分享的嵌入代码</li>
+            <li>本地调试需要在src前加https</li>
+        </ul>
+        <li><em>跳过知识</em></li>
+        <ul>
+            <li>矢量图形</li>
+            <li>响应图片</li>
+            <li>表格基础</li>
+        </ul>
+
+    </ul>
+    </main>
+
+    <h4><a href="../css_content\index.html">下一章:CSS学习页</a></h4>
+    <h4><a href="../index.html">返回上一页</a></h4>
+
+    <footer>
+        <p>页面调试:Sakana</p>
+    </footer>
+    </body>
+</html>
