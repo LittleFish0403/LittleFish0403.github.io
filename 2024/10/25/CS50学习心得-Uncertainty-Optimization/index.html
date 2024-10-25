@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakana&#39;s Blog || CS61A-Effciency</title>
+    <title>Sakana&#39;s Blog || CS50学习心得-Uncertainty/Optimization</title>
     <meta name="author" content="Sakana">
     <meta name="description" content="小鱼的个人博客(开发中……) ">
     <meta name="keywords" content=" ">
@@ -185,14 +185,14 @@
 <link rel="stylesheet" href="/css/post-body.css">
 <div class="article">
     <div>
-        <h1>CS61A-Effciency </h1>
+        <h1>CS50学习心得-Uncertainty/Optimization </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
             </span>
-            2024/4/8
+            2024/10/25
         </span>
 
         
@@ -216,71 +216,46 @@
     </div>
 
     <div class="content" v-pre>
-        <h1 id="23-Efficiency"><a href="#23-Efficiency" class="headerlink" title="23-Efficiency"></a>23-Efficiency</h1><h2 id="Memoization"><a href="#Memoization" class="headerlink" title="Memoization"></a>Memoization</h2><ul>
-<li>记住之前己算过的结果</li>
+        <h1 id="2-Uncertainty"><a href="#2-Uncertainty" class="headerlink" title="2. Uncertainty"></a>2. Uncertainty</h1><h2 id="知识点概述"><a href="#知识点概述" class="headerlink" title="知识点概述"></a>知识点概述</h2><ul>
+<li>概率<ul>
+<li>条件概率</li>
+<li>随机变量</li>
+<li>贝叶斯规则</li>
+<li>联合概率</li>
+<li>概率规则（定理）</li>
+<li>贝叶斯网络<span id="more"></span></li>
 </ul>
-<pre><code>def memo(f):
-    cache = &#123;&#125;
-    def memoized(n):
-        if n not in cache:
-            cache[n] = f(n)
-        return cache[n]
-    return memoized 
+</li>
+<li>采样方法（频率逼近概率）</li>
+<li>马尔科夫模型<ul>
+<li>马尔科夫链</li>
+<li>隐马尔科夫</li>
+</ul>
+</li>
+</ul>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><p>页面排名<br>遗传</p>
+<h1 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3. Optimization"></a>3. Optimization</h1><h2 id="知识点概述-1"><a href="#知识点概述-1" class="headerlink" title="知识点概述"></a>知识点概述</h2><ul>
+<li>本地搜索(local search)<ul>
+<li>hill climbing</li>
+<li>local minima&#x2F;maxima</li>
+<li>simulated annealing</li>
+</ul>
+</li>
+<li>线性规划</li>
+<li>约束满足<ul>
+<li>node consistency</li>
+<li>arc consistency</li>
+<li><strong>backtracking search</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Project-1"><a href="#Project-1" class="headerlink" title="Project"></a>Project</h2><p>猜字游戏</p>
+<h3 id="关于Sorted的用法"><a href="#关于Sorted的用法" class="headerlink" title="关于Sorted的用法"></a>关于Sorted的用法</h3><pre><code>#单约束，字典排序，依据为列表，key为检测函数
+sorted(variables, key = lambda x:len(self.domains[x]))
+
+#双约束，字典排序，依据为元组列表
+unassigned_variables.sort(key=lambda x: (len(self.domains[x]), -len(self.crossword.neighbors(x))))
 </code></pre>
-<span id="more"></span>
-<h2 id="Growth"><a href="#Growth" class="headerlink" title="Growth"></a>Growth</h2><ul>
-<li><p>使用不同的方法完成函数可以加快运行速率</p>
-</li>
-<li><p>Exponential growth 指数增长</p>
-</li>
-<li><p>Quadratic growth 二次增长</p>
-</li>
-<li><p>Linear growth 线性增长</p>
-</li>
-<li><p>Logarithmic growth 对数增长</p>
-</li>
-<li><p>Constant growth 恒定增长</p>
-</li>
-<li><p>表示方法 $\theta$&#x2F;O</p>
-</li>
-</ul>
-<h1 id="24-Decomposition"><a href="#24-Decomposition" class="headerlink" title="24-Decomposition"></a>24-Decomposition</h1><ul>
-<li>Module Design</li>
-</ul>
-<h1 id="25-Data-Example"><a href="#25-Data-Example" class="headerlink" title="25-Data Example"></a>25-Data Example</h1><ul>
-<li><p>append&#x2F;extend: 突变，仅为copy</p>
-</li>
-<li><p>addition&#x2F;slicing: 非突变，t依旧是t</p>
-</li>
-<li><p>pop(): 优先pop最后一个</p>
-</li>
-<li><p>remove(): 优先remove第一个</p>
-</li>
-<li><p>count(): 寻找num的个数</p>
-</li>
-<li><p>map(func, list)</p>
-</li>
-<li><p>filter(func, list)</p>
-</li>
-<li><p>zip(list1, list2)</p>
-</li>
-<li><p>any(list): 只要list中有一个为True，返回True</p>
-<ul>
-<li>元素除了是 0、空、False外都算True</li>
-</ul>
-</li>
-<li><p>all(list): 要全部为True，返回True</p>
-</li>
-</ul>
-<pre><code>#  获取列表相邻数字最大值
-max( [s[i]+s[i+1] for i in range(len(s)-1) ] )
-# 第二种
-max( a+b for a,b in zip(s[:-1],s[1:]) )
-</code></pre>
-<pre><code># 将以数字d为结尾的s里的数字加入字典
-&#123;d:[x for x in s if x%10==d] for d in range(10) if any([x%10==d for x in s])&#125;
-</code></pre>
-<hr>
 
     </div>
 
